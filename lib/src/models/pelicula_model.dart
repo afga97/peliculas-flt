@@ -18,6 +18,7 @@ class Peliculas {
 
 
 class Pelicula {
+  String uniqueId;
   double popularity;
   int voteCount;
   bool video;
@@ -34,6 +35,7 @@ class Pelicula {
   String releaseDate;
 
   Pelicula({
+    this.uniqueId,
     this.popularity,
     this.voteCount,
     this.video,
@@ -74,5 +76,14 @@ class Pelicula {
     }
     return 'https://image.tmdb.org/t/p/w500/$posterPath';
   }
+
+  getBackgroundImg(){
+    if ( backdropPath == null) {
+      return 'https://birkeland.uib.no/wp-content/themes/bcss/images/no.png';
+    }
+    return 'https://image.tmdb.org/t/p/w500/$backdropPath';
+  }
+
+
 
 }
