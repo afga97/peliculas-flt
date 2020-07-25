@@ -90,7 +90,7 @@ class DataSearch extends SearchDelegate {
                 title: Text(pelicula.title),
                 subtitle: Text(pelicula.originalTitle),
                 onTap: () {
-                  close( context, null);
+                  // close( context, null); # SI se cierra se hace otro llamado a la api por lo que es conveniente cachear los resultados
                   pelicula.uniqueId = '${pelicula.id}-search';
                   Navigator.pushNamed(context, 'detalle', arguments: pelicula);
                 },
